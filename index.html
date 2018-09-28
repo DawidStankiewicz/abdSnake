@@ -79,6 +79,10 @@
 
                     cell.x += this.snake.vX * step;
                     cell.y += this.snake.vY * step;
+                    if (cell.x > 500) cell.x = 0;
+                    if (cell.y > 500) cell.y = 0;
+                     if (cell.x < 0) cell.x = 500;
+                    if (cell.y < 0) cell.y = 500;
 
                 } else {
                     cell.oldX = cell.x;
@@ -117,7 +121,7 @@
 
         function updatePosition(e, c) {
             let key = e.keyCode;
-
+                console.log(key);
             // 37 left
             if (key === 37) {
                 this.snake.vX = -1;
